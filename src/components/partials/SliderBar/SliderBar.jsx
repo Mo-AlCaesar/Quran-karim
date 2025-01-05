@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import ChangeTheme from "../ChangeTheme/ChangeTheme.jsx";
 import ChangeFont from "../ChangeFont/ChangeFont.jsx";
 import ChangeLanguage from "../ChangeLanguage/ChangeLanguage.jsx";
@@ -5,11 +6,7 @@ import ChangeLanguage from "../ChangeLanguage/ChangeLanguage.jsx";
 import "./SliderBar.css";
 import ChangeIcons from "../ChangeIcons/ChangeIcons.jsx";
 
-export default function SliderBar({
-  sidebarOpen,
-  currentLanguage,
-  currentIcons,
-}) {
+function SliderBar({ sidebarOpen, currentLanguage, currentIcons }, ref) {
   const lightIcon = `/img/svg/${currentIcons}/slidebar/themes/light-icon.svg`;
   const simpleDarkIcon = `/img/svg/${currentIcons}/slidebar/themes/simple-dark-icon.svg`;
   const darkIcon = `/img/svg/${currentIcons}/slidebar/themes/dark-icon.svg`;
@@ -20,7 +17,10 @@ export default function SliderBar({
   const languageIcon = `/img/svg/${currentIcons}/slidebar/language/language-icon.svg`;
   const palleteIcon = `/img/svg/${currentIcons}/slidebar/themes/pallete-icon.svg`;
   return (
-    <aside className={`sidebar scroll ${sidebarOpen ? "active" : ""}`}>
+    <aside
+      className={`sidebar scroll ${sidebarOpen ? "active" : ""}`}
+      ref={ref}
+    >
       <div className="slider-contanier">
         <img src={languageIcon} className="svg-icon me-3" />
         <ChangeLanguage />
@@ -91,3 +91,5 @@ export default function SliderBar({
     </aside>
   );
 }
+
+export default forwardRef(SliderBar);
