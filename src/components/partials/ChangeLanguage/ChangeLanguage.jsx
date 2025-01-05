@@ -46,7 +46,7 @@ export default function ChangeLanguage({ onLanguageChange }) {
             aria-expanded="false"
           >
             <img
-              src={`img/language/${currentLanguage.id}.png`}
+              src={`/img/language/${currentLanguage.id}.png`}
               className="language-img"
             />
             {languages.find((lang) => lang.id === currentLanguage.id)?.name}
@@ -62,7 +62,7 @@ export default function ChangeLanguage({ onLanguageChange }) {
                   onClick={() => handleLanguageChange(lang)}
                 >
                   <img
-                    src={`img/language/${lang.id}.png`}
+                    src={`/img/language/${lang.id}.png`}
                     alt={lang.name}
                     className="language-img"
                   />

@@ -49,7 +49,7 @@ export default function QuranListening({
     <>
       {showPlayer && (
         <div className="row surah-listening-select">
-          <div className="col-11 reader-choose">
+          <div className="col-10 reader-choose ms-4">
             <select
               className="form-select surah-custom-select"
               onChange={handleSelectChange}

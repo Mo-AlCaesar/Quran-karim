@@ -20,7 +20,7 @@ export default function Home({ QuranContext }) {
           </h1>
         </div>
 
-        <div className="row home-contanier d-flex flex-row gap-2 text-center">
+        <div className="row home-contanier d-flex flex-row gap-2 text-center mx-2">
           <label className="text-main border-bottom mb-2 pb-2">
             {currentLanguage.data.home[0].currentBookmarks}
           </label>
@@ -41,7 +41,7 @@ export default function Home({ QuranContext }) {
           })}
         </div>
 
-        <div className="row home-contanier d-flex flex-row gap-2 text-center my-5">
+        <div className="row home-contanier d-flex flex-row gap-2 text-center  mx-2 my-5">
           <label className="text-main border-bottom mb-2 pb-2">
             {currentLanguage.data.home[0].SurahFavorites}
           </label>
