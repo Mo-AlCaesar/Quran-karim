@@ -15,7 +15,7 @@ export default function PrayerTimes({ QuranContext }) {
     const fetchPrayerTimes = async (city, method) => {
       try {
         const response = await fetch(
-          `http://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=${method}`
+          `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=${method}`
         );
         if (!response.ok) {
           throw new Error("Error");
