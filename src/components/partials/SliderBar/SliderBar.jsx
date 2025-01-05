@@ -88,18 +88,6 @@ export default function SliderBar({
           />
         </div>
       </div>
-
-      <div className="slider-contanier">
-        <button
-          className="sidebar-btn"
-          onClick={() => {
-            localStorage.removeItem("currentLanguage");
-            localStorage.removeItem("ayahBookmarkArray");
-          }}
-        >
-          Reset
-        </button>
-      </div>
     </aside>
   );
 }
