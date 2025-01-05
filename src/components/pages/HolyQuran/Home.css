@@ -1,0 +1,43 @@
+.surah-container {
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
+    rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+  border: 1px solid var(--color-4);
+  border-radius: 15px;
+  padding: 10px;
+}
+.surah-card {
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
+    rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+  background: var(--color-0);
+  color: var(--color-1);
+  padding: 10px 0px 10px 0px;
+  margin: 0px;
+  border-radius: 15px;
+  border: 1px solid var(--color-4);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.surah-card a {
+  text-decoration: none;
+  color: var(--color-1);
+}
+
+.surah-card:hover {
+  transform: translateY(-5px);
+}
+
+.surah-lang-name {
+  width: 100%;
+  font-family: "Amiri";
+  font-size: 16px;
+  border-top: 1px solid var(--color-4);
+}
+
+.surah-lang-name .row {
+  margin: 0px !important;
+}
+
+.surah-lang-name .svg-icon:hover {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+}

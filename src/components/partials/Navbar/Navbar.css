@@ -1,0 +1,180 @@
+.navbar {
+  position: fixed;
+  top: 10px;
+  left: 2.5%;
+  width: 95%;
+  z-index: 1002;
+  padding: 15px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
+    rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+  border: 1px solid var(--color-4);
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: var(--color-1);
+  text-decoration: none;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.navbar-toggler {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s;
+}
+
+.navbar-links.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+  color: var(--color-1);
+  background-color: white;
+  border-radius: 15px;
+  margin: 0 5px;
+  transition: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
+    rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+  border: 1px solid var(--color-4);
+  font-size: 20px;
+}
+
+.nav-link:hover {
+  background-color: white;
+  color: var(--color-hover-1);
+  border-radius: 15px;
+  transition: 0.5s;
+  transform: translateY(-5px);
+}
+
+.nav-link:focus {
+  background-color: white;
+  color: var(--color-1);
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+.nav-active {
+  border: 1px solid var(--color-4);
+  box-shadow: inset 0 1.6px 3.6px 0px rgba(0, 0, 0, 0.133);
+}
+
+.svg-icon {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 959px) {
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid var(--color-4);
+    box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
+      rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s;
+  }
+
+  .navbar-links.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .nav-link {
+    background-color: white;
+    width: 100%;
+    color: var(--color-1);
+    border-radius: 15px;
+    transition: 0.5s;
+    margin: 5px 0px 5px 0px;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+}
+
+@media (min-width: 960px) {
+  .navbar-links {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.navbar-btn {
+  align-items: center;
+  gap: 5px;
+  background-color: white;
+  color: var(--color-1);
+  border: 0px;
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
+    rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+  border: 1px solid var(--color-4);
+}
+
+.sliderBar-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: white;
+  color: var(--color-1);
+  border: 0px;
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
+    rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+  border: 1px solid var(--color-4);
+}

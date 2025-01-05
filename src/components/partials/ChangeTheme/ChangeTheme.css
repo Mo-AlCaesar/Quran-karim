@@ -1,0 +1,322 @@
+body.dark {
+  background-color: rgb(33, 37, 41) !important;
+  color: #e7e9ea !important;
+}
+
+body.dark * {
+  background-color: inherit !important;
+  color: #e7e9ea !important;
+}
+
+body.dark nav {
+  background-color: rgb(33, 37, 41) !important;
+  color: #e7e9ea !important;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+body.dark .page-title,
+body.dark .home-contanier,
+body.dark .radio-card,
+body.dark .border,
+body.dark .navbar,
+body.dark .nav-link,
+body.dark .custom-select,
+body.dark .search-input,
+body.dark .sidebar,
+body.dark .slider-contanier,
+body.dark .dropdown-menu,
+body.dark .audio-player,
+body.dark .audio-player .slider,
+body.dark .audio-player .volume-popup,
+/* reader */
+body.dark .reader-container,
+body.dark .reader-letter a,
+body.dark .reader-p,
+body.dark .reader-card,
+body.dark .reader-aduio,
+body.dark .reader-aduio a,
+body.dark .radio-card a,
+
+/* Quran */
+body.dark .surah-container,
+body.dark .surah-card,
+body.dark .surah-info ,
+body.dark .surah ,
+body.dark .tooltiptext ,
+body.dark .surah-words,
+body.dark .surah-listening-btn a,
+body.dark .surah-custom-select,
+body.dark .tabs-surah-data ,
+body.dark .tabs-tabs ,
+body.dark .tabs-btn ,
+body.dark .pagination-container ,
+body.dark .pagination-btn a {
+  border: 1px solid #464b50 !important;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+body.dark button,
+body.dark .btn-main {
+  color: #e7e9ea !important;
+  border: 1px solid #464b50 !important;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+body.dark a {
+  color: #e7e9ea !important;
+}
+
+body.dark .svg-icon {
+  background-color: transparent !important;
+  filter: brightness(0) saturate(100%) invert(1) !important;
+}
+
+body.dark input:focus {
+  border-color: inherit;
+}
+
+body.dark input::placeholder {
+  color: #e7e9ea;
+  opacity: 1;
+}
+
+body.dark ::-webkit-scrollbar-track {
+  background: #464b50;
+}
+
+body.dark .border-top,
+body.dark .surah-lang-name {
+  border-top: 1px solid #464b50 !important;
+}
+body.dark .border-bottom,
+body.dark .surah-listening-select {
+  border-bottom: 1px solid #464b50 !important;
+}
+
+body.dark .border-start,
+body.dark .search-icon {
+  border-left: 1px solid #464b50 !important;
+}
+
+body.dark .border-end,
+body.dark .audio-player .controls {
+  border-right: 1px solid #464b50 !important;
+}
+
+body.dark .audio-player .slider::-webkit-slider-thumb {
+  background-color: white;
+}
+
+@media (max-width: 959px) {
+  body.dark .navbar-links {
+    border: 1px solid #464b50 !important;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2) !important;
+  }
+}
+
+body.dark .custom-tooltip {
+  width: auto !important;
+  background-color: #e7e9ea !important;
+  color: rgb(33, 37, 41) !important;
+  text-align: center !important;
+  border: 1px solid var(--color-4) !important;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
+    rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px !important;
+  z-index: 2000 !important;
+}
+
+body.dark .tooltiptext {
+  background-color: #e7e9ea !important;
+}
+
+body.dark .tooltiptext .svg-icon {
+  background-color: transparent !important;
+  filter: brightness(10) saturate(100%) invert(1) !important;
+}
+
+body.dark .ayah-p:hover {
+  background-color: #e7e9ea !important;
+  color: rgb(33, 37, 41) !important;
+}
+
+body.dark .ayah-p:hover span {
+  color: rgb(33, 37, 41) !important;
+}
+
+body.dark .active-p {
+  background-color: #e7e9ea !important;
+  color: rgb(33, 37, 41) !important;
+}
+
+body.dark .active-p span {
+  color: rgb(33, 37, 41) !important;
+}
+
+body.dark .quran-footer-data {
+  background-color: #e7e9ea !important;
+  color: rgb(33, 37, 41) !important;
+}
+body.dark .quran-footer-data p {
+  color: rgb(33, 37, 41) !important;
+}
+
+/* Simple Dark */
+
+body.simpledark {
+  background-color: rgb(50, 50, 50) !important;
+  color: #ffffff !important;
+}
+
+body.simpledark * {
+  background-color: inherit !important;
+  color: #ffffff !important;
+}
+
+body.simpledark nav {
+  background-color: rgb(50, 50, 50) !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid #666 !important;
+}
+
+body.simpledark .page-title,
+body.simpledark .home-contanier,
+body.simpledark .radio-card,
+body.simpledark .border,
+body.simpledark .navbar,
+body.simpledark .nav-link,
+body.simpledark .custom-select,
+body.simpledark .search-input,
+body.simpledark .sidebar,
+body.simpledark .slider-contanier,
+body.simpledark .dropdown-menu,
+body.simpledark .audio-player,
+body.simpledark .audio-player .slider,
+body.simpledark .audio-player .volume-popup,
+
+/* reader */
+body.simpledark .reader-container,
+body.simpledark .reader-letter a,
+body.simpledark .reader-p,
+body.simpledark .reader-card,
+body.simpledark .reader-aduio,
+body.simpledark .reader-aduio a,
+body.simpledark .radio-card a,
+/* Quran */
+body.simpledark .surah-container,
+body.simpledark .surah-card,
+body.simpledark .surah-info ,
+body.simpledark .surah ,
+body.simpledark .tooltiptext ,
+body.simpledark .surah-words,
+body.simpledark .surah-listening-btn a,
+body.simpledark .surah-custom-select,
+body.simpledark .tabs-surah-data ,
+body.simpledark .tabs-tabs ,
+body.simpledark .tabs-btn ,
+body.simpledark .pagination-container ,
+body.simpledark .pagination-btn a {
+  border: 1px solid #666 !important;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+body.simpledark button,
+body.simpledark .btn-main {
+  color: #ffffff !important;
+  border: 1px solid #666 !important;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+body.simpledark a {
+  color: #ffffff !important;
+}
+body.simpledark .svg-icon {
+  background-color: transparent !important;
+  filter: brightness(0) saturate(100%) invert(0.9) !important;
+}
+
+body.simpledark input:focus {
+  border-color: inherit;
+}
+
+body.simpledark input::placeholder {
+  color: #e7e9ea;
+  opacity: 1;
+}
+
+body.simpledark ::-webkit-scrollbar-track {
+  background: #666;
+}
+
+body.simpledark .border-top,
+body.simpledark .surah-lang-name {
+  border-top: 1px solid #666 !important;
+}
+body.simpledark .border-bottom,
+body.simpledark .surah-listening-select {
+  border-bottom: 1px solid #666 !important;
+}
+
+body.simpledark .border-start,
+body.simpledark .search-icon {
+  border-left: 1px solid #666 !important;
+}
+body.simpledark .border-end,
+body.simpledark .audio-player .controls {
+  border-right: 1px solid #666 !important;
+}
+
+body.simpledark .audio-player .slider::-webkit-slider-thumb {
+  background-color: white;
+}
+@media (max-width: 959px) {
+  body.simpledark .navbar-links {
+    border: 1px solid #666 !important;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2) !important;
+  }
+}
+
+body.simpledark .custom-tooltip {
+  width: auto !important;
+  background-color: #e7e9ea !important;
+  color: #666 !important;
+  text-align: center !important;
+  border: 1px solid var(--color-4) !important;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
+    rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px !important;
+  z-index: 2000 !important;
+}
+
+body.simpledark .tooltiptext {
+  background-color: #e7e9ea !important;
+}
+
+body.simpledark .tooltiptext .svg-icon {
+  background-color: transparent !important;
+  filter: brightness(4) saturate(100%) invert(1) !important;
+}
+
+body.simpledark .ayah-p:hover {
+  background-color: #e7e9ea !important;
+  color: rgb(50, 50, 50) !important;
+}
+
+body.simpledark .ayah-p:hover span {
+  color: rgb(50, 50, 50) !important;
+}
+
+body.simpledark .active-p {
+  background-color: #e7e9ea !important;
+  color: rgb(50, 50, 50) !important;
+}
+
+body.simpledark .active-p span {
+  color: rgb(50, 50, 50) !important;
+}
+
+body.simpledark .quran-footer-data {
+  background-color: #e7e9ea !important;
+  color: rgb(50, 50, 50) !important;
+}
+body.simpledark .quran-footer-data p {
+  color: rgb(50, 50, 50) !important;
+}

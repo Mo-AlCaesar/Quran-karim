@@ -1,0 +1,121 @@
+.prayer-times-container {
+  background-color: var(--color-5);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 90vw;
+}
+
+.date-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.date-card {
+  font-size: 16px;
+  width: 45%;
+  background-color: white;
+  color: var(--color-1);
+  border-radius: 15px;
+  padding: 15px 10px 0px 10px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .date-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .date-card {
+    font-size: 13px;
+    width: 100%;
+    background-color: white;
+    color: var(--color-1);
+    border-radius: 15px;
+    padding: 10px 10x 0px 10px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .date-card h5 {
+    font-size: 16px;
+  }
+}
+
+.prayer-times-container .custom-select {
+  display: block;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  border: 2px solid var(--color-4);
+  border-radius: 15px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  color: var(--color-1);
+
+  cursor: pointer;
+  width: 90%;
+  transition: 0.5s;
+  margin-bottom: 15px;
+}
+
+.prayer-times-container .custom-select:focus {
+  border-color: var(--color-hover-1);
+  box-shadow: 0 0 5px var(--color-hover-1, 0.5);
+}
+.prayer-times-container.custom-select:hover {
+  border: 1px solid var(--color-1);
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.prayer-times-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding-top: 20px;
+}
+
+.prayer-time-item {
+  background-color: var(--color-1);
+  color: white;
+  padding: 8px 25px 8px 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s;
+  width: 200px;
+}
+
+.prayer-time-item:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 460px) {
+  .prayer-times-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .prayer-time-item {
+    width: 100%;
+  }
+}
+
+.prayer-name {
+  font-weight: bold;
+}
+
+.loading-message,
+.error-message {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}

@@ -1,0 +1,146 @@
+.reader-container {
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
+    rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+  border: 1px solid var(--color-4);
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.reader-container .row {
+  margin: 0px;
+}
+.filter-letter {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.letter-btn {
+  background-color: white;
+  color: var(--color-1);
+  font-size: 17px;
+  font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
+    rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+  border: 1px solid var(--color-4);
+  border-radius: 15px;
+  width: 100vw;
+  padding: 8px;
+}
+
+.scroll-letter {
+  height: 100vh;
+  overflow: auto;
+}
+
+@media (max-width: 1023px) {
+  .filter-letter {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  .scroll-letter {
+    height: auto !important;
+  }
+  .letter-btn {
+    width: 100px !important;
+  }
+}
+
+.reader-letter {
+  color: var(--color-1);
+  text-align: right;
+  padding-top: 5px;
+  margin-bottom: 40px;
+}
+.reader-letter a {
+  border-radius: 15px;
+  padding: 20px;
+  background-color: white;
+  color: var(--color-1) !important;
+  text-decoration: none;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
+    rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+  border: 1px solid var(--color-4);
+}
+
+.reader-card {
+  display: block;
+  text-decoration: none;
+  color: var(--color-1);
+  background: var(--color-0);
+  text-align: center;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
+    rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+  border: 1px solid var(--color-4);
+  transition: 0.5s;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-1);
+}
+.reader-card:hover {
+  transform: translateY(-5px);
+}
+
+.reader-card .icon {
+  color: var(--color-0);
+}
+
+.reader-card .play {
+  background: var(--color-1);
+  border-radius: 15px;
+  margin-left: 30px;
+  max-width: 55px;
+  height: 116px;
+}
+
+.reader-card .play i {
+  cursor: pointer;
+  transition: 0.5s;
+  color: var(--color-0);
+  margin-top: 40px;
+}
+
+.reader-card .play i:hover {
+  transform: rotate(-10deg);
+}
+
+.reader-card .play a {
+  text-decoration: none;
+  color: var(--color-0);
+}
+
+.reader-card .surah_name i {
+  margin-right: 5px;
+  color: var(--color-1);
+}
+
+.reader-card .surah_name h5 {
+  margin-right: 15px;
+}
+
+.reader-card .surah_btn {
+  background: var(--color-1);
+  border-radius: 15px;
+  margin-left: 30px;
+  max-width: 55px;
+  height: 131px;
+}
+
+.reader-card .play_download i {
+  cursor: pointer;
+  transition: 0.5s;
+  color: var(--color-0);
+  margin-top: 22px;
+}
+
+@media (max-width: 1000px) {
+  .custom-order-lg-10 {
+    order: 2 !important;
+  }
+  .custom-order-lg-2 {
+    order: 1 !important;
+  }
+}

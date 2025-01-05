@@ -1,0 +1,118 @@
+/* Fade in and out animation */
+.animate-opacity {
+  animation: opac 0.8s;
+}
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide in from the top */
+.animate-top {
+  position: relative;
+  animation: top 0.4s;
+}
+@keyframes top {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* Slide in from the bottom */
+.animate-bottom {
+  position: relative;
+  animation: bottom 0.4s;
+}
+@keyframes bottom {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+/* Slide in from the left */
+.animate-left {
+  position: relative;
+  animation: left 0.4s;
+}
+@keyframes left {
+  from {
+    left: -300px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+/* Slide in from the right */
+.animate-right {
+  position: relative;
+  animation: right 0.4s;
+}
+@keyframes right {
+  from {
+    right: -300px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+/* Zoom in animation */
+.animate-zoom {
+  animation: zoom 0.6s;
+}
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Spin animation */
+.spin {
+  animation: spin 2s infinite linear;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pulse animation */
+.pulse {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

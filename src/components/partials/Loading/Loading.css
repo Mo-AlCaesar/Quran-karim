@@ -1,0 +1,89 @@
+/* Loader */
+
+.load-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  color: white;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 100px;
+}
+
+.container2 {
+  height: 15px;
+  width: 105px;
+  display: flex;
+  position: relative;
+}
+
+.container2 .circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50px 50px 50px 30px;
+  background-color: var(--color-1);
+  animation: move 800ms linear 0ms infinite;
+  margin-right: 25px;
+}
+
+.container2 .circle:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: grow 800ms linear 0ms infinite;
+}
+
+.container2 .circle:last-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 0;
+  animation: grow 500ms linear 0s infinite reverse;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(2, 2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+@keyframes move {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(45px);
+  }
+}
+
+/* Loader End */
