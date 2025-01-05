@@ -8,7 +8,7 @@ export default function SurahTafsir({ id, handleNum, currentLanguage }) {
   const [isTafsirVisible, setIsTafsirVisible] = useState(false);
 
   useEffect(() => {
-    fetch("http://api.alquran.cloud/v1/edition?type=tafsir")
+    fetch("https://api.alquran.cloud/v1/edition?type=tafsir")
       .then((response) => response.json())
       .then((data) => setTafsirList(data.data))
       .catch((error) => console.error("Error fetching tafsir list:", error));
@@ -17,7 +17,7 @@ export default function SurahTafsir({ id, handleNum, currentLanguage }) {
   const handleShowTafsir = () => {
     setTafsirText("");
     setIsTafsirVisible(true);
-    fetch(`http://api.alquran.cloud/v1/surah/${id}/${selectedTafsir}`)
+    fetch(`https://api.alquran.cloud/v1/surah/${id}/${selectedTafsir}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.status === "OK") {

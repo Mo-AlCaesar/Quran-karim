@@ -7,7 +7,7 @@ function AyahTafsir({ surahNum, ayahNum }) {
   const [isTafsirVisible, setIsTafsirVisible] = useState(false);
 
   useEffect(() => {
-    fetch("http://api.alquran.cloud/v1/edition?type=tafsir")
+    fetch("https://api.alquran.cloud/v1/edition?type=tafsir")
       .then((response) => response.json())
       .then((data) => {
         if (data.status === "OK") {
@@ -22,7 +22,7 @@ function AyahTafsir({ surahNum, ayahNum }) {
   const handleShowTafsir = () => {
     setIsTafsirVisible(true);
     setTafsir("");
-    fetch(`http://api.alquran.cloud/v1/ayah/${ayahNum}/${tafsirType}`)
+    fetch(`https://api.alquran.cloud/v1/ayah/${ayahNum}/${tafsirType}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.status === "OK") {
