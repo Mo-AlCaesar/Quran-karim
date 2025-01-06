@@ -1,4 +1,3 @@
-import { forwardRef } from "react";
 import ChangeTheme from "../ChangeTheme/ChangeTheme.jsx";
 import ChangeFont from "../ChangeFont/ChangeFont.jsx";
 import ChangeLanguage from "../ChangeLanguage/ChangeLanguage.jsx";
@@ -129,4 +128,4 @@ function SliderBar({ sidebarOpen, currentLanguage, currentIcons }, ref) {
   );
 }
 
-export default forwardRef(SliderBar);
+export default SliderBar;

@@ -45,7 +45,6 @@ function Layout() {
   return (
     <>
       <Navbar page={pathname} />
-
       <Tooltip className="custom-tooltip" id="custom-title" place="top" />
       <Tooltip
         className="custom-tooltip"
