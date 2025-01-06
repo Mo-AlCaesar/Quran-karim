@@ -16,6 +16,9 @@ function SliderBar({ sidebarOpen, currentLanguage, currentIcons }, ref) {
   const boldDuotoneIcon = `/img/svg/${currentIcons}/slidebar/icons/bold-Duotone-icon.svg`;
   const languageIcon = `/img/svg/${currentIcons}/slidebar/language/language-icon.svg`;
   const palleteIcon = `/img/svg/${currentIcons}/slidebar/themes/pallete-icon.svg`;
+  const faceIcon = `/img/svg/facebook.svg`;
+  const gitIcon = `/img/svg/github.svg`;
+
   return (
     <aside
       className={`sidebar scroll ${sidebarOpen ? "active" : ""}`}
@@ -86,6 +89,40 @@ function SliderBar({ sidebarOpen, currentLanguage, currentIcons }, ref) {
             font="Amiri"
             icon={fontIcon}
           />
+        </div>
+      </div>
+      <div className="rights-contanier">
+        <p className="rights-font">
+          © 2025 All rights reserved <br />
+          Design and Developed by Mohamed Abdallah
+        </p>
+        <div className="social">
+          <a
+            href="https://github.com/Mo-AlCaesar"
+            target="blank"
+            className="rights-btn"
+          >
+            Github
+            <img src={gitIcon} className="svg-icon" />
+          </a>
+          <a
+            href="https://www.facebook.com/mohamedabdallahofficial"
+            target="blank"
+            className="rights-btn"
+          >
+            Facebook
+            <img src={faceIcon} className="svg-icon" />
+          </a>
+        </div>
+        <div className="social w-100">
+          <a
+            href="https://github.com/Mo-AlCaesar/Quran-karim"
+            target="blank"
+            className="rights-btn w-100"
+          >
+            Github project
+            <img src={gitIcon} className="svg-icon" />
+          </a>
         </div>
       </div>
     </aside>

@@ -4,7 +4,7 @@ import { useState, useContext, useEffect, useRef } from "react";
 import { QuranContext } from "../../../store/quran-context.jsx";
 import SliderBar from "../SliderBar/SliderBar.jsx";
 import "./Navbar.css";
-
+import $ from "jquery";
 export default function Navbar({ page }) {
   const { currentLanguage, currentIcons } = useContext(QuranContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -48,19 +48,21 @@ export default function Navbar({ page }) {
         !navbarRef.current.contains(event.target) &&
         isOpen
       ) {
-        setIsOpen(false);
+        setTimeout(() => {
+          setIsOpen(false);
+        }, 100);
       }
       if (
         sidebarRef.current &&
         !sidebarRef.current.contains(event.target) &&
         sidebarOpen
       ) {
-        setSidebarOpen(false);
+        setTimeout(() => {
+          setSidebarOpen(false);
+        }, 100);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
