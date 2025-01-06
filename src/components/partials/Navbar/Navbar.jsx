@@ -1,17 +1,14 @@
 import logoImg from "/img/logo.png";
 import { Link } from "react-router-dom";
-import { useState, useContext, useEffect, useRef } from "react";
+import { useState, useContext } from "react";
 import { QuranContext } from "../../../store/quran-context.jsx";
 import SliderBar from "../SliderBar/SliderBar.jsx";
 import "./Navbar.css";
-import $ from "jquery";
+
 export default function Navbar({ page }) {
   const { currentLanguage, currentIcons } = useContext(QuranContext);
   const [isOpen, setIsOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const navbarRef = useRef(null);
-  const sidebarRef = useRef(null);
 
   function toggleNavbar() {
     setIsOpen(!isOpen);
@@ -40,37 +37,9 @@ export default function Navbar({ page }) {
     { to: "prayer", img: prayerIcon },
     { to: "sebha", img: tasbihIcon },
   ];
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        navbarRef.current &&
-        !navbarRef.current.contains(event.target) &&
-        isOpen
-      ) {
-        setTimeout(() => {
-          setIsOpen(false);
-        }, 100);
-      }
-      if (
-        sidebarRef.current &&
-        !sidebarRef.current.contains(event.target) &&
-        sidebarOpen
-      ) {
-        setTimeout(() => {
-          setSidebarOpen(false);
-        }, 100);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen, sidebarOpen]);
-
   return (
     <>
-      <nav className={`navbar ${isOpen ? "open" : ""}`} ref={navbarRef}>
+      <nav className={`navbar ${isOpen ? "open" : ""}`}>
         <div className="navbar-container ">
           <button className="navbar-toggler navbar-btn" onClick={toggleNavbar}>
             <img src={togglerIcon} className="svg-icon" />
@@ -81,7 +50,7 @@ export default function Navbar({ page }) {
           </Link>
 
           <div className={`navbar-links ${isOpen ? "show" : ""}`}>
-            {buttons.map(({ to, img }) => (
+            {buttons.map(({ to, img, icon }) => (
               <Link
                 key={to}
                 onClick={toggleNavbar}
@@ -102,7 +71,11 @@ export default function Navbar({ page }) {
                   currentLanguage.data.navbar[0][to === "/" ? "home" : to]
                 }
               >
-                <img src={img} alt={to} className="svg-icon" />
+                {img ? (
+                  <img src={img} alt={to} className="svg-icon" />
+                ) : (
+                  <i className={icon}></i>
+                )}
               </Link>
             ))}
           </div>
@@ -121,7 +94,6 @@ export default function Navbar({ page }) {
         sidebarOpen={sidebarOpen}
         currentLanguage={currentLanguage}
         currentIcons={currentIcons}
-        ref={sidebarRef}
       />
     </>
   );
