@@ -59,7 +59,6 @@ export default function QuranTooltip({
             handlePlayAudio(
               `https://cdn.islamic.network/quran/audio/${selectedShaikh.num}/${selectedShaikh.id}/${ayah.number}.mp3`,
               false,
-              typeData.name,
               ayah.numberInSurah
             )
           }

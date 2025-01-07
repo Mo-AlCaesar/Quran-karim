@@ -19,6 +19,8 @@ function SliderBar({ sidebarOpen, currentLanguage, currentIcons }, ref) {
   const faceIcon = `/img/svg/facebook.svg`;
   const gitIcon = `/img/svg/github.svg`;
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <aside
       className={`sidebar scroll ${sidebarOpen ? "active" : ""}`}
@@ -92,10 +94,6 @@ function SliderBar({ sidebarOpen, currentLanguage, currentIcons }, ref) {
         </div>
       </div>
       <div className="rights-contanier">
-        <p className="rights-font">
-          © 2025 All rights reserved <br />
-          Design and Developed by Mohamed Abdallah
-        </p>
         <div className="social">
           <a
             href="https://github.com/Mo-AlCaesar"
@@ -114,16 +112,21 @@ function SliderBar({ sidebarOpen, currentLanguage, currentIcons }, ref) {
             <img src={faceIcon} className="svg-icon" />
           </a>
         </div>
-        <div className="social w-100">
+        <div className="social w-100 border-bottom pb-2 mb-2">
           <a
             href="https://github.com/Mo-AlCaesar/Quran-karim"
             target="blank"
             className="rights-btn w-100"
           >
-            Github project
+            Github Repository
             <img src={gitIcon} className="svg-icon" />
           </a>
         </div>
+
+        <p className="rights-font">
+          Developed by : Mohamed Abdallah
+          <br />© {currentYear} All rights reserved
+        </p>
       </div>
     </aside>
   );

@@ -81,7 +81,7 @@ export default function QuranByType({
       </Modal>
 
       <div className="surah">
-        <div className="page-title mb-4">
+        <div className="surah-title mb-4">
           {type === "surah" ? (
             <>
               <div className="surah-font" title={typeData.name}>
@@ -111,7 +111,7 @@ export default function QuranByType({
             `${typeTitle} ${handleNum(id)}`
           )}
         </div>
-        <div ref={quranDivRef} className="surah-container">
+        <div ref={quranDivRef} className="quran-container">
           {typeData ? (
             <div id={`${type}-ayahs`} className="quran">
               <p className="basmala">﷽</p>

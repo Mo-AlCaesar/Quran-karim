@@ -19,6 +19,7 @@ export default function Navbar({ page }) {
 
   function toggleSidebar() {
     setSidebarOpen(!sidebarOpen);
+    setIsOpen(false);
   }
 
   const togglerIcon = `/img/svg/${currentIcons}/navbar/nav-toggler.svg`;

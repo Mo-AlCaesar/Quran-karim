@@ -99,6 +99,7 @@ export default function QuranFilter({
               data-tooltip-content={currentLanguage.data.quran[0][label]}
             >
               <img src={surahIcon} className="svg-icon" />
+              {currentLanguage.data.quran[0][label]}
             </button>
           </li>
         ))}

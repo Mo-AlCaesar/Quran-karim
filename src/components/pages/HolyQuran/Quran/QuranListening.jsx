@@ -49,7 +49,10 @@ export default function QuranListening({
     <>
       {showPlayer && (
         <div className="row surah-listening-select">
-          <div className="col-10 reader-choose ms-4">
+          <div className="surah-listening-title">
+            {currentLanguage.data.quran[0].listening}
+          </div>
+          <div className="col-9">
             <select
               className="form-select surah-custom-select"
               onChange={handleSelectChange}
@@ -75,7 +78,7 @@ export default function QuranListening({
             </select>
           </div>
 
-          <div className="col-1 d-flex flex-column align-items-center text-center justify-content-center surah-listening-btn">
+          <div className="col-2 d-flex flex-column align-items-center text-center justify-content-center">
             <a
               onClick={() =>
                 handlePlayAudio(

@@ -88,7 +88,7 @@ export default function Sebha({ QuranContext }) {
             />
           </button>
         </div>
-        <div className="sebha-controls-3 margin-1 w-100">
+        <div className="sebha-controls-3 margin-1 pb-5 w-100">
           <button
             onClick={() => dispatch({ type: "TOGGLE_AFTER_PRAYER" })}
             className="btn btn-main prayer w-100 p-3 rounded-4"

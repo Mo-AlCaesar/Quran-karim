@@ -103,7 +103,7 @@ export default function Quran({ QuranContext }) {
                         <div className="surah-card">
                           <Link
                             to={`surah/${surah.number}`}
-                            className="row text-center"
+                            className="row text-center custom-row"
                           >
                             <div className="col-2 border-start d-flex align-items-center justify-content-center mb-2">
                               <span>{handleNum(surah.number)}</span>

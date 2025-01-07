@@ -68,16 +68,15 @@ export default function Surah({ QuranContext, pathname }) {
         inline: "center",
       });
       window.scrollTo({
-        top: element.offsetTop - window.innerHeight / 5,
+        top: document.body.scrollHeight,
         behavior: "smooth",
-        block: "center",
-        inline: "center",
       });
     }
   }
 
   const handleActiveAyah = (ayahNumber) => {
     setActiveAyah(ayahNumber === activeAyah ? 0 : ayahNumber);
+    scrollToElementById(`root-div`);
     scrollToElementById(`ayah-${ayahNumber}`);
     scrollToElementById(`btn-ayah-${ayahNumber}`);
   };
@@ -157,6 +156,7 @@ export default function Surah({ QuranContext, pathname }) {
                       src={`/img/svg/${currentIcons}/quran/tab-read-icon.svg`}
                       className="svg-icon"
                     />
+                    {currentLanguage.data.quran[0].reading}
                   </button>
                 </li>
                 {typeName === "surah" && (
@@ -179,6 +179,7 @@ export default function Surah({ QuranContext, pathname }) {
                         src={`/img/svg/${currentIcons}/quran/tab-tafsir-icon.svg`}
                         className="svg-icon"
                       />
+                      {currentLanguage.data.quran[0].interpretation}
                     </button>
                   </li>
                 )}
@@ -202,6 +203,7 @@ export default function Surah({ QuranContext, pathname }) {
                       src={`/img/svg/${currentIcons}/quran/tab-translation-icon.svg`}
                       className="svg-icon"
                     />
+                    {currentLanguage.data.quran[0].translation}
                   </button>
                 </li>
               </ul>
