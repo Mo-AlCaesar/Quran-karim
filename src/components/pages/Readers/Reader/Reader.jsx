@@ -29,7 +29,7 @@ export default function Reader({ QuranContext }) {
   );
 
   if (!reader) {
-    return <p>لا يوجد قارئ بهذا المعرف.</p>;
+    return <p></p>;
   }
 
   const readerSurahs = reader.moshaf[moshafName].surah_list;

@@ -39,7 +39,7 @@ export default function PrayerTimes({ QuranContext }) {
   };
 
   if (!prayerData) {
-    return <div className="loading-message">{}</div>;
+    return <div></div>;
   }
 
   function handleNum(num) {

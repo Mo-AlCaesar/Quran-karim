@@ -27,11 +27,11 @@ export default function LiveStream({ QuranContext }) {
   }, [currentLanguage.id]);
 
   if (error) {
-    return <div className="error-message">خطأ: {error}</div>;
+    return <div></div>;
   }
 
   if (!channels) {
-    return <div className="loading-message">جارٍ التحميل...</div>;
+    return <div></div>;
   } else {
     ("");
   }

@@ -71,7 +71,7 @@ export default function QuranByType({
   }
 
   if (!typeData || typeData.length === 0) {
-    return <h1>No data available</h1>;
+    return <h1></h1>;
   }
 
   return (
