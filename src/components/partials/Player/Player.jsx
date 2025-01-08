@@ -11,6 +11,8 @@ const Player = ({
   fullAyah,
   onAyahChange,
   currentIcons,
+  currentLanguage,
+  handleNum,
 }) => {
   const rightIcon = `/img/svg/${currentIcons}/player/arrow-right-icon.svg`;
   const leftIcon = `/img/svg/${currentIcons}/player/arrow-left-icon.svg`;
@@ -52,7 +54,7 @@ const Player = ({
       }
     };
     playAudio();
-  }, [isPlaying, mp3AudioUrl]);
+  }, [isPlaying, mp3AudioUrl, audioUrl]);
 
   const handleTimeUpdate = () => {
     if (audioRef.current) {
@@ -113,18 +115,42 @@ const Player = ({
     setShowVolumePopup(false);
   };
 
+  function formatTime(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const remainingSeconds = seconds % 60;
+
+    const tL = ["ar", "ur", "ug", "fa"].includes(currentLanguage.id)
+      ? ["س", "د", "ث"]
+      : ["h", "m", "s"];
+    return `${hours}${tL[0]} ${minutes}${tL[1]} ${remainingSeconds}${tL[2]}`;
+  }
+
   return (
     <div className="audio-player">
-      <div className="progress-container">
-        <span>{Math.floor(currentTime) || 0}</span>
+      <div className="progress-container text-align-center">
+        <div className="custom-column time-display">
+          <span>{handleNum(formatTime(Math.floor(currentTime) || 0))}</span>
+        </div>
 
-        <input
-          type="range"
-          value={(currentTime / duration) * 100 || 0}
-          onChange={handleSeek}
-          className="slider w-100"
-        />
-        <span>{Math.floor(duration) || 0}</span>
+        <div className="custom-column slider-container">
+          <input
+            type="range"
+            value={(currentTime / duration) * 100 || 0}
+            onChange={handleSeek}
+            className="custom-slider slider"
+          />
+        </div>
+        <div className="custom-column time-display">
+          <span>
+            {handleNum(
+              formatTime(Math.floor(duration) || 0)
+                .replace("Infinity", "0")
+                .replace("NaN", "0")
+                .replace("NaN", "0")
+            )}
+          </span>
+        </div>
       </div>
 
       <div className="controls">
@@ -163,7 +189,7 @@ const Player = ({
                 step="0.01"
                 value={volume}
                 onChange={handleVolumeChange}
-                className="slider"
+                className="slider volume-slider"
               />
               <button
                 className="close-popup"

@@ -4,7 +4,7 @@ import { useContext, useState, useEffect } from "react";
 import Player from "../../partials/Player/Player.jsx";
 
 export default function Radio({ QuranContext }) {
-  const { radio, fetchRadio, currentLanguage, currentIcons } =
+  const { radio, fetchRadio, currentLanguage, currentIcons, handleNum } =
     useContext(QuranContext);
   const [audioUrl, setAudioUrl] = useState();
   const [playingStatue, setPlayingStatue] = useState(false);
@@ -59,6 +59,8 @@ export default function Radio({ QuranContext }) {
           audioUrl={audioUrl}
           playingStatue={playingStatue}
           currentIcons={currentIcons}
+          currentLanguage={currentLanguage}
+          handleNum={handleNum}
         />
       </section>
     </>

@@ -23,7 +23,7 @@ export default function SurahTafsir({ id, handleNum, currentLanguage }) {
         if (data.status === "OK") {
           setTafsirText(data.data);
         } else {
-          setTafsirText("تفسير غير متاح");
+          setTafsirText(currentLanguage.data.quran[0].tafsierPlaceholder);
         }
       })
       .catch((error) => console.error("Error fetching surah tafsir:", error));
@@ -48,7 +48,7 @@ export default function SurahTafsir({ id, handleNum, currentLanguage }) {
           ))}
         </select>
         <button className="btn btn-main" onClick={handleShowTafsir}>
-          عرض التفسير
+          {currentLanguage.data.quran[0].tafsierButton}
         </button>
       </div>
 
@@ -57,7 +57,6 @@ export default function SurahTafsir({ id, handleNum, currentLanguage }) {
           {tafsirText.length === 0 ? (
             <div className="d-flex flex-column justify-content-center align-items-center">
               <div className="spinner-grow text-main" role="status"></div>
-              <p className="m-2 text-main">جاري التحميل</p>
             </div>
           ) : (
             tafsirText.ayahs?.map((ayah) => (

@@ -71,6 +71,8 @@ export default function Reader({ QuranContext }) {
   const copyIcon = `/img/svg/${currentIcons}/reader/copy-icon.svg`;
   const downloadIcon = `/img/svg/${currentIcons}/reader/download-icon.svg`;
   const playIcon = `/img/svg/${currentIcons}/reader/play-icon.svg`;
+  const readerIcon = `/img/svg/${currentIcons}/navbar/reader-icon.svg`;
+  const quranIcon = `/img/svg/${currentIcons}/navbar/quran-icon.svg`;
   return (
     <>
       <section className="container margin-1">
@@ -80,17 +82,21 @@ export default function Reader({ QuranContext }) {
           </div>
         ) : (
           <>
-            <div className="row pt-5">
-              <div className="col-lg-4 col-md-12 d-flex justify-content-center text-center">
-                <p className="reader-p">{reader.name}</p>
-              </div>
-              <div className="col-lg-4 col-md-12 d-flex justify-content-center text-center">
-                <p className="reader-p">
-                  {handleNum(reader.moshaf[moshafName].surah_total)}
-                </p>
-              </div>
-              <div className="col-lg-4 col-md-12 d-flex justify-content-center text-center">
-                <p className="reader-p">{reader.moshaf[moshafName].name}</p>
+            <div className="mb-3 page-title">
+              <div className="row">
+                <div className="col-lg-6 col-md-12">
+                  <div className="reader-p">
+                    <img src={readerIcon} alt="" className="svg-icon" />
+                    <p>{reader.name}</p>
+                  </div>
+                </div>
+
+                <div className="col-lg-6 col-md-12">
+                  <div className="reader-p">
+                    <img src={quranIcon} alt="" className="svg-icon" />
+                    <p>{handleNum(reader.moshaf[moshafName].surah_total)}</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -152,7 +158,12 @@ export default function Reader({ QuranContext }) {
                               data-tooltip-content={
                                 currentLanguage.data.readers[0].copyBtn
                               }
-                              onClick={copyToClipboard}
+                              onClick={() =>
+                                copyToClipboard(
+                                  mp3Url,
+                                  currentLanguage.data.readers[0].copyBtn
+                                )
+                              }
                             >
                               <img src={copyIcon} className="svg-icon" />
                             </a>
@@ -209,6 +220,8 @@ export default function Reader({ QuranContext }) {
               fullAyah={false}
               onAyahChange
               currentIcons={currentIcons}
+              currentLanguage={currentLanguage}
+              handleNum={handleNum}
             />
           </>
         )}

@@ -77,7 +77,7 @@ export default function QuranByType({
   return (
     <>
       <Modal id="tafsirModal" label="tafsirModal" size="xl" backdrop="static">
-        <AyahTafsir surahNum={intID} ayahNum={ayahTafsir} />
+        <AyahTafsir ayahNum={ayahTafsir} currentLanguage={currentLanguage} />
       </Modal>
 
       <div className="surah">

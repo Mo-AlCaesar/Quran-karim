@@ -7,15 +7,20 @@
 }
 
 .reader-p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding-top: 15px;
   background-color: white;
   color: var(--color-1);
-  width: 100%;
-  padding: 7px;
   border: 1px solid var(--color-4);
   border-radius: 15px;
+  font-size: 20px;
+  transition: 0.5s;
   box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
     rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
-  transition: 0.5s;
 }
 
 .reader-aduio {
@@ -90,6 +95,11 @@
   margin: 0px !important;
 }
 
+@media (max-width: 1024px) {
+  .reader-p {
+    margin-bottom: 10px !important;
+  }
+}
 @media (max-width: 724px) {
   .reader-aduio a {
     width: 35px;

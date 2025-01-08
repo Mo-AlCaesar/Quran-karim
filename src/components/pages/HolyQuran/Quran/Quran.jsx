@@ -377,6 +377,8 @@ export default function Surah({ QuranContext, pathname }) {
             fullAyah={fullAyah}
             onAyahChange={handleAyahChange}
             currentIcons={currentIcons}
+            currentLanguage={currentLanguage}
+            handleNum={handleNum}
           />
         )}
       </section>

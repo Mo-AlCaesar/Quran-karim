@@ -1,43 +1,48 @@
-import { useReducer, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { numToAr } from "/public/js/main.js";
 import "./Sebha.css";
-import Loading from "../../partials/Loading/Loading";
-
-const initialState = { count: 0, currentTasbih: 0, afterPrayer: false };
-
-const sebhaReducer = (state, action) => {
-  switch (action.type) {
-    case "INCREMENT":
-      if (state.afterPrayer) {
-        if (state.count < 33) {
-          return { ...state, count: state.count + 1 };
-        } else {
-          return {
-            ...state,
-            count: 0,
-            currentTasbih: (state.currentTasbih + 1) % 3,
-          };
-        }
-      } else {
-        return { ...state, count: state.count + 1 };
-      }
-    case "RESET":
-      return { count: 0, currentTasbih: 0, afterPrayer: false };
-    case "TOGGLE_AFTER_PRAYER":
-      return {
-        ...state,
-        afterPrayer: !state.afterPrayer,
-        count: 0,
-        currentTasbih: 0,
-      };
-    default:
-      return state;
-  }
-};
 
 export default function Sebha({ QuranContext }) {
   const { currentLanguage, currentIcons } = useContext(QuranContext);
-  const [state, dispatch] = useReducer(sebhaReducer, initialState);
+
+  const savedCount = localStorage.getItem("sebhaCount");
+  const [count, setCount] = useState(savedCount ? parseInt(savedCount, 10) : 0);
+  const [currentTasbih, setCurrentTasbih] = useState(0);
+  const [afterPrayer, setAfterPrayer] = useState(false);
+
+  useEffect(() => {
+    if (!afterPrayer) {
+      localStorage.setItem("sebhaCount", count);
+    }
+  }, [count, afterPrayer]);
+
+  const incrementCount = () => {
+    if (afterPrayer) {
+      if (count < 33) {
+        setCount(count + 1);
+      } else {
+        setCount(0);
+        setCurrentTasbih((currentTasbih + 1) % 3);
+      }
+    } else {
+      setCount(count + 1);
+    }
+  };
+
+  const resetCount = () => {
+    setCount(0);
+    setCurrentTasbih(0);
+    setAfterPrayer(false);
+  };
+
+  const toggleAfterPrayer = () => {
+    if (afterPrayer) {
+      setCount(savedCount ? parseInt(savedCount, 10) : 0);
+    } else {
+      setCount(0);
+    }
+    setAfterPrayer(!afterPrayer);
+  };
 
   return (
     <section className="container margin-1">
@@ -51,25 +56,17 @@ export default function Sebha({ QuranContext }) {
         <div className="sebha-display">
           <h1>
             {["ar", "ur", "ug", "fa"].includes(currentLanguage.id)
-              ? numToAr(state.count)
-              : state.count}
+              ? numToAr(count)
+              : count}
           </h1>
-          {state.afterPrayer && (
+          {afterPrayer && (
             <span>
-              {
-                currentLanguage.data.tasbeh[0].tasbihLetters[
-                  state.currentTasbih
-                ]
-              }
+              {currentLanguage.data.tasbeh[0].tasbihLetters[currentTasbih]}
             </span>
           )}
         </div>
         <div className="sebha-controls-1">
-          <button
-            onClick={() => dispatch({ type: "RESET" })}
-            className="sebha-button reset"
-          >
-            {" "}
+          <button onClick={resetCount} className="sebha-button reset">
             <img
               src={`/img/svg/${currentIcons}/sebha/restart.svg`}
               className="svg-icon mx-2"
@@ -77,23 +74,19 @@ export default function Sebha({ QuranContext }) {
           </button>
         </div>
         <div className="sebha-controls-2">
-          <button
-            onClick={() => dispatch({ type: "INCREMENT" })}
-            className="sebha-button add"
-          >
-            {" "}
+          <button onClick={incrementCount} className="sebha-button add">
             <img
               src={`/img/svg/${currentIcons}/sebha/add.svg`}
-              className="svg-icon mx-2"
+              className="svg-icon increment-svg-icon mx-2"
             />
           </button>
         </div>
         <div className="sebha-controls-3 margin-1 pb-5 w-100">
           <button
-            onClick={() => dispatch({ type: "TOGGLE_AFTER_PRAYER" })}
+            onClick={toggleAfterPrayer}
             className="btn btn-main prayer w-100 p-3 rounded-4"
           >
-            {state.afterPrayer
+            {afterPrayer
               ? currentLanguage.data.tasbeh[0].buttonTasbehStop
               : currentLanguage.data.tasbeh[0].buttonTasbehStart}
           </button>

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-function AyahTafsir({ surahNum, ayahNum }) {
+function AyahTafsir({ ayahNum, currentLanguage }) {
   const [tafsir, setTafsir] = useState("");
-  const [tafsirType, setTafsirType] = useState("ar.jalalayn");
+  const [tafsirType, setTafsirType] = useState("");
   const [tafsirOptions, setTafsirOptions] = useState([]);
   const [isTafsirVisible, setIsTafsirVisible] = useState(false);
 
@@ -28,7 +28,7 @@ function AyahTafsir({ surahNum, ayahNum }) {
         if (data.status === "OK") {
           setTafsir(data.data.text);
         } else {
-          setTafsir("تفسير غير متاح");
+          setTafsir(currentLanguage.data.quran[0].tafsierPlaceholder);
         }
       })
       .catch((error) => console.error("Error fetching tafsir:", error));
@@ -42,6 +42,9 @@ function AyahTafsir({ surahNum, ayahNum }) {
           onChange={(e) => setTafsirType(e.target.value)}
           value={tafsirType}
         >
+          <option value="">
+            {currentLanguage.data.quran[0].tafsierPlaceholder}
+          </option>
           {tafsirOptions.map((option) => (
             <option key={option.identifier} value={option.identifier}>
               {option.name}
@@ -49,14 +52,13 @@ function AyahTafsir({ surahNum, ayahNum }) {
           ))}
         </select>
         <button className="btn btn-main mt-3" onClick={handleShowTafsir}>
-          عرض التفسير
+          {currentLanguage.data.quran[0].tafsierButton}
         </button>
       </div>
       {isTafsirVisible &&
         (tafsir.length === 0 ? (
           <div className="d-flex flex-column justify-content-center align-items-center">
             <div className="spinner-grow text-main" role="status"></div>
-            <p className="m-2 text-main">جاري التحميل</p>
           </div>
         ) : (
           <p>{tafsir}</p>

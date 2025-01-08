@@ -1,15 +1,12 @@
 import Swal from "sweetalert2";
 
-export const copyToClipboard = (event) => {
-  const textToCopy = event.target.getAttribute("data-value");
+export const copyToClipboard = (mp3Url, title) => {
+  const textToCopy = mp3Url;
   if (navigator.clipboard) {
     navigator.clipboard.writeText(textToCopy).then(
       () => {
         Swal.fire({
-          toast: true,
-          position: "top-end",
-          icon: "success",
-          title: "تم نسخ رابط السورة",
+          title: title,
           showConfirmButton: false,
           timer: 2000,
         });
@@ -26,10 +23,7 @@ export const copyToClipboard = (event) => {
     try {
       document.execCommand("copy");
       Swal.fire({
-        toast: true,
-        position: "top-end",
-        icon: "success",
-        title: "تم نسخ رابط السورة",
+        title: title,
         showConfirmButton: false,
         timer: 2000,
       });

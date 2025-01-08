@@ -4,32 +4,14 @@
   align-items: center;
   position: fixed;
   justify-content: space-between;
-  width: 95%;
+  width: 96%;
   bottom: 5px;
-  left: 2.5vw;
+  left: 2vw;
   background: white;
   border: 1px solid var(--color-4);
   border-radius: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   z-index: 1000;
-}
-
-@media (max-width: 768px) {
-  .audio-player {
-    display: flex;
-    flex-direction: column-reverse;
-    padding: 10px !important;
-  }
-  .controls {
-    width: 100% !important;
-    border-right: 0px !important;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--color-4);
-  }
-  .progress-container {
-    width: 100% !important;
-    padding-top: 5px;
-  }
 }
 
 h2 {
@@ -78,24 +60,34 @@ h2 {
 
 .progress-container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-items: center;
-  gap: 10px;
-  width: 60vw;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  margin: 0px;
 }
 
-.progress-container span {
-  padding-left: 20px;
-  padding-right: 20px;
-  color: var(--color-1);
+.text-align-center {
+  text-align: center;
+}
+
+.custom-column {
+  flex: 1;
 }
 
 .time-display {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5px;
-  color: #666;
+  flex: 0 0 25%;
+  max-width: 25%;
+  color: var(--color-1);
+}
+
+.slider-container {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.custom-slider {
+  width: 100%;
 }
 
 .volume-btn {
@@ -119,7 +111,9 @@ h2 {
   background: #e0e0e0;
   outline: none;
 }
-
+.volume-slider {
+  transform: rotate(180deg);
+}
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -143,8 +137,9 @@ h2 {
 
 .controls .volume-popup {
   position: absolute;
-  top: -50px;
-  left: 40%;
+  top: -168px;
+  left: -5%;
+  transform: rotate(-90deg);
   padding: 20px;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
@@ -152,7 +147,6 @@ h2 {
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px,
     rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
-  transform: translate(-50%, -50%);
   z-index: 2000;
 }
 
@@ -193,5 +187,29 @@ h2 {
   to {
     transform: rotate(-360deg);
     /* opacity: 0; */
+  }
+}
+
+@media (max-width: 768px) {
+  .audio-player {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px !important;
+  }
+  .controls {
+    width: 100% !important;
+    border-right: 0px !important;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-4) !important;
+  }
+  .progress-container {
+    width: 100% !important;
+    padding-top: 5px;
+  }
+
+  .controls .volume-popup {
+    top: -178px;
+    left: -10%;
+    transform: rotate(-90deg);
   }
 }
